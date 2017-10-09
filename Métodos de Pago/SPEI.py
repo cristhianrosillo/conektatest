@@ -40,4 +40,6 @@ data = {
 order = conekta.Order.create(data)
 
 print ("Order No.: " + order.id)
+print("Status: " + order.payment_status)
+print("$ " + str(order.amount/100) + order.currency)
 
