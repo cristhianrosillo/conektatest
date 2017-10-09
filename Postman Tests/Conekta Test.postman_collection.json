@@ -1,0 +1,215 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Conekta Test",
+		"_postman_id": "b7daec95-e760-6873-47cc-09b5fde63ec8",
+		"description": "Made for test proposals",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Plans",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"AuthToken = \"Basic \" + btoa(\"key_AbQS7grJpeu6hNTxmY5fBQ\") + \":\""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "Post Plan",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.conekta-v2.0.0+jso",
+						"description": ""
+					},
+					{
+						"key": "X-Conekta-Client-User-Agent",
+						"value": "{\"bindings_version\":\"2.0.0\",  \"lang\":\".net\",  \"lang_version\":\"v4.0.30319\",  \"publisher\":\"conekta\",  \"uname\":\"Microsoft Windows NT 6.2.9200.0\"}",
+						"description": ""
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic a2V5X0FiUVM3Z3JKcGV1NmhOVHhtWTVmQlE=:",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\":\"gold-plan\",\r\n  \"name\":\"Gold Plan\",\r\n  \"amount\": 100000,\r\n  \"currency\":\"MXN\",\r\n  \"interval\":\"month\",\r\n  \"frequency\": 1,\r\n  \"trial_period_days\": 15,\r\n  \"expiry_count\": 12\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"AuthToken = \"Basic \" + btoa(\"key_AbQS7grJpeu6hNTxmY5fBQ\") + \":\""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.conekta.io/orders",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.conekta-v2.0.0+json",
+						"description": ""
+					},
+					{
+						"key": "X-Conekta-Client-User-Agent",
+						"value": "{\"bindings_version\":\"2.0.0\",  \"lang\":\".net\",  \"lang_version\":\"v4.0.30319\",  \"publisher\":\"conekta\",  \"uname\":\"Microsoft Windows NT 6.2.9200.0\"}",
+						"description": ""
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic a2V5X0FiUVM3Z3JKcGV1NmhOVHhtWTVmQlE=:",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"line_items\": [{\n          \"name\": \"Tesla Model 3\",\n          \"unit_price\": 5000000,\n          \"quantity\": 1\n      }],\n      \n   \"shipping_lines\": [{\n          \"amount\": 100000,\n          \"carrier\": \"Amazon Services\"\n      }],\n      \n      \"currency\": \"USD\",\n      \"customer_info\": {\n       \"customer_id\": \"cus_2hMDqavc5pNbbRg6r\"},\n  \n \"shipping_contacts\": [{\n   \"phone\":\"+5215555555555\",\n   \"receiver\":\"Karla Robinson\",\n   \"between_streets\":\"\",\n   \"address\": {\n     \"street1\":\"555 Happy Avenue\",\n     \"street2\":\"Roling In The Deep\",\n     \"city\":\"Ciudad de Mexico\",\n     \"state\":\"Ciudad de Mexico\",\n     \"country\":\"MX\",\n     \"postal_code\":\"05050\",\n     \"residential\": true\n    }\n  }]\n  \n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Customers",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"AuthToken = \"Basic \" + btoa(\"key_AbQS7grJpeu6hNTxmY5fBQ\") + \":\""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.conekta.io/customers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.conekta-v2.0.0+json",
+						"description": ""
+					},
+					{
+						"key": "X-Conekta-Client-User-Agent",
+						"value": "{\"bindings_version\":\"2.0.0\",  \"lang\":\".net\",  \"lang_version\":\"v4.0.30319\",  \"publisher\":\"conekta\",  \"uname\":\"Microsoft Windows NT 6.2.9200.0\"}",
+						"description": ""
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic a2V5X0FiUVM3Z3JKcGV1NmhOVHhtWTVmQlE=:",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"name\":\"Rubí Morales\",\n \"email\":\"rubi@conekta.com\",\n \"phone\":\"+5215555555555\",\n \"currency\": \"USD\",\n \n \"payment_sources\": [{\n   \"token_id\":\"tok_test_amex_0005\",\n   \"type\":\"card\"\n  }]\n \n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"AuthToken = \"Basic \" + btoa(\"key_AbQS7grJpeu6hNTxmY5fBQ\") + \":\""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.conekta.io/customers/cus_2hMDqavc5pNbbRg6r",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.conekta-v2.0.0+json",
+						"description": ""
+					},
+					{
+						"key": "X-Conekta-Client-User-Agent",
+						"value": "{\"bindings_version\":\"2.0.0\",  \"lang\":\".net\",  \"lang_version\":\"v4.0.30319\",  \"publisher\":\"conekta\",  \"uname\":\"Microsoft Windows NT 6.2.9200.0\"}",
+						"description": ""
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic a2V5X0FiUVM3Z3JKcGV1NmhOVHhtWTVmQlE=:",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"currency\":\"MXN\",\"customer_info\":{\"customer_id\":\"cus_2hM9hh1u9kHouuwe2\"},\"line_items\":[{\"name\":\"BoxofCohibaS1s\",\"unit_price\":35000,\"quantity\":1}],\"charges\":[{\"payment_method\":{\"type\":\"default\"}}]}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
