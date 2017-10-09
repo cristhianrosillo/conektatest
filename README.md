@@ -1,4 +1,4 @@
-# conektatest
+# Conektatest
 
 Los archivos creados en la carpeta métodos de pago responden a funciones para generar ordenes por medio de Tarjeta (card.py), OxxoPAY (Oxxo.py), SPEI(SPEI.py) en lenguaje Python. Probado en su versión 2.7. 
 En cada uno de los mismos se concluye con la impresión en consola que entrega el número de orden, el estatus del pago y el monto de la transacción con moneda.
